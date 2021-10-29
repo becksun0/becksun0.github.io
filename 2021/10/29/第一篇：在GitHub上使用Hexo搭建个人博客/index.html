@@ -10,7 +10,9 @@
 
 现拥有一个GitHub的账号，没有可以注册一个；
 合适的工作环境（Mac、Windows等）；
-在桌面环境安装node.js、git，安装方式很简单，可以自行百度或Google。本文所使用的环">
+在桌面环境安装node.js、git，安装方式很简单，可以自行百度或Google。
+
+本文所使用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -413,7 +415,10 @@
 <ul>
 <li>现拥有一个GitHub的账号，没有可以注册一个；</li>
 <li>合适的工作环境（Mac、Windows等）；</li>
-<li>在桌面环境安装node.js、git，安装方式很简单，可以自行百度或Google。<br>本文所使用的环境：</li>
+<li>在桌面环境安装node.js、git，安装方式很简单，可以自行百度或Google。</li>
+</ul>
+<p>本文所使用的环境：</p>
+<ul>
 <li>Windows11</li>
 <li>node.js 14.8.1</li>
 <li>node.js 2.33.1</li>
@@ -428,18 +433,18 @@
 <li>不出意外的话你可以去这个目录下找到刚刚生成的密钥<code>&#39;C:\Users\计算机用户名\.ssh&#39;</code><img src="ssh.png">
 然后打开`id_rsa.pub`文件（我这里用notepad++打开），这个文件里面就是刚刚生成的密钥，Ctrl+A全选后复制到剪贴板，去GitHub配置</li>
 <li>在GitHub主页点自己的头像选择<code>setting</code>，然后在左侧找到<code>SSH and GPG keys</code>选项,在<code>SSH keys</code>右边选择<code>new SSH key</code>，Title随便填，Key就是刚刚在<code>id_rsa.pub</code>里面复制的所有内容，最后点<code>Add SSH key</code></li>
-<li>回到git的命令窗口测试SSH密钥是否配置成功，在git命令窗口中输入<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com  #可以直接复制，不用改<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>回到git的命令窗口测试SSH密钥是否配置成功，在git命令窗口中输入<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com  <span class="token comment">#可以直接复制，不用改</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 应该会有一次确认，输入<code>yes</code>后回车，如果你看到<code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>这句话，恭喜你已经配置好了SSH密钥。</li>
 </ol>
 <h1 id="生成本地Hexo博客"><a href="#生成本地Hexo博客" class="headerlink" title="生成本地Hexo博客"></a>生成本地Hexo博客</h1><hr>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ul>
 <li>你需要建立一个文件夹去存放你的博客文件，建议使用英文名的文件夹，我这里直接在桌面创建一个名为<code>blogs</code>的文件夹，然后一定要打开这个文件夹，在文件夹内的空白处再次打开<code>Git Bash Here</code><img src="Git Bash Here.png" width="50%" height="50%"></li>
-<li>在命令窗口中输入以下命令：<pre class="line-numbers language-none"><code class="language-none">npm install -g hexo-cli #安装Hexo
-hexo init #在blogs文件夹内下载hexo的本地文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>你还可能用到以下命令：<pre class="line-numbers language-none"><code class="language-none">hexo g #生成静态文件，是hexo generate的缩写，生成的文件都在public内
-hexo s #启动本地hexo服务，是hexo server的缩写
-hexo clean #清除缓存文件和生成的静态文件
-#hexo s启动本地服务后你可以在浏览器中输入&#96;http:&#x2F;&#x2F;localhost:4000&#96;来预览博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>在命令窗口中输入以下命令：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli <span class="token comment">#安装Hexo</span>
+hexo init <span class="token comment">#在blogs文件夹内下载hexo的本地文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>你还可能用到以下命令：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo g <span class="token comment">#生成静态文件，是hexo generate的缩写，生成的文件都在public内</span>
+hexo s <span class="token comment">#启动本地hexo服务，是hexo server的缩写</span>
+hexo clean <span class="token comment">#清除缓存文件和生成的静态文件</span>
+<span class="token comment">#hexo s启动本地服务后你可以在浏览器中输入`http://localhost:4000`来预览博客</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h1 id="将博客部署到GitHub仓库"><a href="#将博客部署到GitHub仓库" class="headerlink" title="将博客部署到GitHub仓库"></a>将博客部署到GitHub仓库</h1><hr>
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><ul>
@@ -451,8 +456,8 @@ hexo clean #清除缓存文件和生成的静态文件
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="将博客部署到仓库"><a href="#将博客部署到仓库" class="headerlink" title="将博客部署到仓库"></a>将博客部署到仓库</h2><ul>
-<li>如果你已经在本地写了文章或做了更改的话你应该先生成静态文件<pre class="line-numbers language-none"><code class="language-none">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>然后将你的博客部署到GitHub的仓<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>如果你已经在本地写了文章或做了更改的话你应该先生成静态文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>然后将你的博客部署到GitHub的仓<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 到此为止你已经将你的博客部署到了GitHub的仓库，你可以在仓库中找到你的博客网址，之后可以直接输入网址访问你的博客。<img src="link.png" width="50%" height="50%">
 在下面找到`GitHub Pages`点击`Check it out here!`就可以看到` Your site is published at ···`，这个就是你的博客地址。</li>
 </ul>
